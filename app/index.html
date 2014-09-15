@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" ng-app="brleases">
+<head>
+  <meta charset="utf-8">
+  <title>My HTML File</title>
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="../bower_components/angular/angular.js"></script>
+  <script src="js/controllers.js"></script>
+</head>
+<body ng-controller="GalleryCtrl">
+
+    <div class="container">
+        <h1>Brazil Leases</h1>
+    </div>
+
+  <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <img class='img-responsive' ng-repeat="image in images" ng-src="{{image.path}}"/>
+        </div>
+    </div>
+  </div>
+
+</body>
+</html>
