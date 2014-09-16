@@ -2,9 +2,8 @@
 <html lang="en" ng-app="brleases">
 <head>
   <meta charset="utf-8">
-  <title>My HTML File</title>
+  <title>Brazil Leases</title>
   <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
-  <link rel="stylesheet" href="../bower_components/bootstrap/dist/js/bootstrap.js">
   <link rel="stylesheet" href="css/app.css">
 
   <script src="../bower_components/angular/angular.js"></script>
@@ -12,7 +11,7 @@
   <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="js/controllers.js"></script>
 </head>
-<body ng-controller="GalleryCtrl">
+<body ng-controller="GalleryCtrl as gal">
 
     <div class="container">
         <h1>Brazil Leases</h1>
@@ -21,27 +20,54 @@
   <div class="container">
     <div class="row">
         <div class="col-md-12">
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-          <!-- Indicators -->
-          <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" ng-repeat="image in images" data-slide-to="{{$index}}"></li>
-          </ol>
+            <h2>Cobertura em Copacabana com 4  dormitórios à 80 metros da praia</h2>
+            <div id="carousel-rodolfo" class="carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#carousel-rodolfo" ng-repeat="image in gal.getImages(0)" data-slide-to="{{$index}}"></li>
+              </ol>
 
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner">
-            <div class="item ng-class:{'active': $first} ;" ng-repeat="image in images">
-              <img class='img-responsive' ng-src="{{image.path}}"/>
-            </div>            ...
-          </div>
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+                <div class="item ng-class:{'active': $first} ;" ng-repeat="image in gal.getImages(0)">
+                  <img class='img-responsive ap-image' ng-src="{{image.path}}"/>
+                </div>
+              </div>
 
-          <!-- Controls -->
-          <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-          </a>
-          <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-          </a>
+              <!-- Controls -->
+              <a class="left carousel-control" href="#carousel-rodolfo" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+              </a>
+              <a class="right carousel-control" href="#carousel-rodolfo" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+              </a>
+            </div>
         </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Apartamento com 3 quartos à dois quarteirões da praia de Copacabana</h2>
+            <div id="carousel-ronald" class="carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#carousel-ronald" ng-repeat="image in gal.getImages(1)" data-slide-to="{{$index}}"></li>
+              </ol>
+
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+                <div class="item ng-class:{'active': $first} ;" ng-repeat="image in gal.getImages(1)">
+                  <img class='img-responsive ap-image' ng-src="{{image.path}}"/>
+                </div>
+              </div>
+
+              <!-- Controls -->
+              <a class="left carousel-control" href="#carousel-ronald" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+              </a>
+              <a class="right carousel-control" href="#carousel-ronald" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+              </a>
+            </div>
         </div>
     </div>
   </div>

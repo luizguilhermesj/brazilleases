@@ -1,9 +1,21 @@
-var brleases = angular.module('brleases', []);
+(function(){
+    'use strict'
 
-brleases.controller('GalleryCtrl', function ($scope) {
-  $scope.images = [
-    {'path': 'images/apartments/rodolfo_dantas/1-3.JPG'},
-    {'path': 'images/apartments/rodolfo_dantas/1-4.JPG'},
-    {'path': 'images/apartments/rodolfo_dantas/1-5.JPG'}
-  ];
-});
+    var brleases = angular.module('brleases', []);
+
+    var GalleryCtrl = function($http){
+        this.images = [];
+        $http.get('listImages.php').success($.proxy(this, 'setImages'));
+    }
+
+    GalleryCtrl.prototype.setImages = function(data) {
+           this.images = data;
+    }
+
+    GalleryCtrl.prototype.getImages = function(id) {
+        return this.images[id];
+    }
+
+    brleases.controller('GalleryCtrl', GalleryCtrl);
+
+})();
